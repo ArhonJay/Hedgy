@@ -1,0 +1,31 @@
+{
+  "name": "hedgybot",
+  "version": "1.0.0",
+  "description": "Telegram bot with DeFi capabilities on Hedera Network",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "check": "node src/utils/contractChecker.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "hedera",
+    "defi",
+    "cryptocurrency"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "ethers": "^6.9.0",
+    "dotenv": "^16.3.1",
+    "@hashgraph/sdk": "^2.40.0",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
