@@ -245,10 +245,8 @@ npm run coverage      # Generate coverage report
 
 ### 🎓 Hackathon Submission
 
-**Project Name:** Hedgy - Hedera Token Trading Bot  
-**Category:** DeFi / Trading Tools  
-**Team:** [Your Team Name]  
-**Submission Date:** [Date]
+**Project Name:** Hedgy  
+**Category:**  Onchain Finance & Real-World Assets (RWA); Subtrack: Financial Inclusion
 
 ### 🏆 What Makes Hedgy Special?
 
@@ -290,7 +288,7 @@ npm run coverage      # Generate coverage report
 **Platform:** Hedera/HashGraph  
 **Completed By:** Elfritz Angelo Peralta 
 **Completion Date:** October 31, 2025
-**Certificate ID:** [Certificate Number]
+**Certificate ID:** [Certificate Number](https://certs.hashgraphdev.com/ff92286b-5e5e-4261-a188-68dc550c1482.pdf)
 
 **Certificate Image:**
 
