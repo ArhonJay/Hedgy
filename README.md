@@ -313,7 +313,7 @@ npm run coverage      # Generate coverage report
 
 ### Access Points
 
-- 🌐 **Website:** [Your Deployed URL](https://hedgyybot.vercel.app/)
+- 🌐 **Website:** [Hedgy Bot](https://hedgyybot.vercel.app/)
 - 🤖 **Telegram Bot:** [@HedgyyBot](https://t.me/HedgyyBot)
 - 📖 **Documentation:** [Docs Link]
 
