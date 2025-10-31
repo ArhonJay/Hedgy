@@ -19,7 +19,7 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 /* -------------------------------------------------------------------------- */
-/*                               TYPE DEFINITIONS                             */
+/*                               COMMAND DEFINITIONS                             */
 /* -------------------------------------------------------------------------- */
 type FeatureKey = "register" | "send" | "launch" | "stake";
 
@@ -186,7 +186,7 @@ function Hero() {
             alt="Hedgie mascot"
             width={44}
             height={44}
-            className="rounded-xl object-contain"
+            className="rounded-xl object-contain max-w-[44px] max-h-[44px]"
             priority
           />
         </div>
@@ -196,7 +196,7 @@ function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl text-5xl font-black leading-[1.05] text-[color:var(--ink)] sm:text-6xl lg:text-7xl"
+          className="max-w-3xl text-4xl sm:text-6xl lg:text-7xl font-black leading-[1.05] text-[color:var(--ink)]"
         >
           Meet Hedgie —{" "}
           <span className="block bg-gradient-to-r from-sky-300 to-sky-500 bg-clip-text text-transparent">
@@ -226,7 +226,7 @@ function Hero() {
         </div>
 
         {/* Combined demo mock */}
-        <div className="mt-12 w-full max-w-[720px]">
+        <div className="mt-10 sm:mt-12 w-full max-w-[640px] sm:max-w-[720px] px-1.5 sm:px-0">
           <PhoneMockCombined />
         </div>
       </div>
@@ -239,7 +239,7 @@ function PhoneMockCombined() {
     <div className="rounded-[2rem] border border-[color:var(--outline)] bg-[color:var(--surface)] p-3 shadow-lg">
       <div className="rounded-[1.4rem] bg-[#0A1224] p-3">
         <div className="rounded-2xl border border-[color:var(--outline)] bg-[#0C1530] p-3">
-          <div className="h-[380px] overflow-hidden rounded-xl bg-[#0B142B] p-3 text-left">
+          <div className="h-[300px] sm:h-[340px] md:h-[380px] overflow-hidden rounded-xl bg-[#0B142B] p-2.5 sm:p-3 text-left">
             <BotBubble text="Welcome! Try /register, /send, /launchToken, /stake" accent="#67e8f9" />
             <UserBubble text="/register" />
             <BotBubble text="Wallet created ✅  Address: 0x4c…ed9  Network: Hedera" accent="#38bdf8" />
@@ -260,7 +260,7 @@ function BotBubble({ text, accent }: { text: string; accent: string }) {
   return (
     <div className="flex items-start gap-2">
       <div className="mt-0.5 h-6 w-6 shrink-0 rounded-full bg-[color:var(--tg)]" />
-      <div className="max-w-[80%] rounded-2xl rounded-tl-sm border border-[color:var(--outline)] bg-[#0F1A36] p-2.5 text-[13px] text-slate-200">
+      <div className="max-w-[86%] sm:max-w-[80%] rounded-2xl rounded-tl-sm border border-[color:var(--outline)] bg-[#0F1A36] p-2.5 text-[13px] text-slate-200">
         <pre className="whitespace-pre-wrap font-sans">{text}</pre>
         <div className="mt-1 text-[10px]" style={{ color: accent }}>
           on Hedera
@@ -272,7 +272,7 @@ function BotBubble({ text, accent }: { text: string; accent: string }) {
 function UserBubble({ text }: { text: string }) {
   return (
     <div className="flex justify-end">
-      <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-sky-600/90 px-3 py-2 text-[13px] text-white shadow">
+      <div className="max-w-[86%] sm:max-w-[80%] rounded-2xl rounded-tr-sm bg-sky-600/90 px-3 py-2 text-[13px] text-white shadow">
         {text}
       </div>
     </div>
@@ -300,8 +300,8 @@ function FeaturesSection() {
   }, [active]);
 
   return (
-    <section id="features" className="py-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 md:flex-row md:gap-12">
+    <section id="features" className="pb-12 pt-16 sm:pb-16 sm:pt-20 md:py-24">
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 sm:px-5 md:flex-row md:gap-10 lg:gap-12">
         {/* Left: Chat Demo */}
         <motion.div
           key={feature.key}
@@ -309,11 +309,11 @@ function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="flex w-full max-w-md flex-col rounded-[2rem] border border-[color:var(--outline)] bg-[color:var(--surface)] p-3 shadow-lg"
+          className="flex w-full max-w-[520px] sm:max-w-[560px] md:max-w-md flex-col rounded-[1.6rem] sm:rounded-[2rem] border border-[color:var(--outline)] bg-[color:var(--surface)] p-2.5 sm:p-3 shadow-lg"
         >
           <div className="rounded-[1.4rem] bg-[#0A1224] p-3">
             <div className="rounded-2xl border border-[color:var(--outline)] bg-[#0C1530] p-3">
-              <div className="h-[420px] overflow-hidden rounded-xl bg-[#0B142B] p-3 text-left">
+              <div className="h-[320px] sm:h-[380px] md:h-[420px] overflow-hidden rounded-xl bg-[#0B142B] p-2.5 sm:p-3 text-left">
                 <BotBubble
                   text="Welcome! Try /register, /send, /launchToken, /stake"
                   accent="#67e8f9"
@@ -328,13 +328,13 @@ function FeaturesSection() {
 
         {/* Right: Feature Details */}
         <div className="mt-10 w-full md:mt-0 md:max-w-md">
-          <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+          <div className="grid w-full grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:justify-center sm:gap-3 md:justify-start">
             {FEATURES.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setActive(f.key)}
                 className={cx(
-                  "flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-medium transition-all",
+                  "flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-[13px] sm:text-sm font-medium transition-all w-full sm:w-auto",
                   active === f.key
                     ? "border-transparent bg-[color:var(--tg)] text-white shadow-md"
                     : "border-[color:var(--outline)] bg-[color:var(--surface)] hover:bg-[#111a31]"
