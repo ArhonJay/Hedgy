@@ -286,10 +286,10 @@ npm run coverage      # Generate coverage report
 
 **Certificate Details:**
 
-**Course:** [Course Name]  
+**Course:** Hashgraph Developer Course
 **Platform:** Hedera/HashGraph  
-**Completed By:** [Your Name]  
-**Completion Date:** [Date]  
+**Completed By:** Elfritz Angelo Peralta 
+**Completion Date:** October 31, 2025
 **Certificate ID:** [Certificate Number]
 
 **Certificate Image:**
