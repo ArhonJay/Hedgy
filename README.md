@@ -405,10 +405,6 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 👥 Team
 
-- **Developer:** [Your Name]
-- **Role:** Full Stack Blockchain Developer
-- **Contact:** [Your Email/Twitter/LinkedIn]
-
 ---
 
 ## 🙏 Acknowledgments
