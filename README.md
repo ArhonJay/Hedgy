@@ -284,19 +284,11 @@ npm run coverage      # Generate coverage report
 
 **Certificate Details:**
 
-**Course:** Hashgraph Developer Course
-**Platform:** Hedera/HashGraph  
-**Completed By:** Elfritz Angelo Peralta 
-**Completion Date:** October 31, 2025
-**Certificate ID:** [Certificate Number](https://certs.hashgraphdev.com/ff92286b-5e5e-4261-a188-68dc550c1482.pdf)
-
-**Certificate Image:**
-
-<!-- Add your certificate image here -->
-```
-[Certificate Image Placeholder]
-Replace this section with your actual Hashgraph course completion certificate
-```
+- **Course:** Hashgraph Developer Course
+- **Platform:** Hedera/HashGraph  
+- **Completed By:** Elfritz Angelo Peralta 
+- **Completion Date:** October 31, 2025
+- **Certificate ID:** [Certificate Number](https://certs.hashgraphdev.com/ff92286b-5e5e-4261-a188-68dc550c1482.pdf)
 
 **Skills Acquired:**
 - ✅ Hedera network architecture and consensus
@@ -321,8 +313,8 @@ Replace this section with your actual Hashgraph course completion certificate
 
 ### Access Points
 
-- 🌐 **Website:** [Your Deployed URL]
-- 🤖 **Telegram Bot:** [@YourBotUsername](https://t.me/YourBotUsername)
+- 🌐 **Website:** [Your Deployed URL](https://hedgyybot.vercel.app/)
+- 🤖 **Telegram Bot:** [@HedgyyBot](https://t.me/HedgyyBot)
 - 📖 **Documentation:** [Docs Link]
 
 ---
