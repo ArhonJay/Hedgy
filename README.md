@@ -18,6 +18,8 @@
 
 **Hedgy** is an innovative token trading platform built on the Hedera Network, combining smart contracts, a Telegram bot interface, and a modern web frontend to provide seamless token trading experiences. Built for the **Hedera Africa Hackathon**, Hedgy demonstrates the power and efficiency of Hedera's hashgraph consensus.
 
+[Pitch Deck](https://www.canva.com/design/DAG3X83lmdo/yD5f8PKphbNYfsP9FPfXEw/view?utm_content=DAG3X83lmdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f98ebe396)
+
 ### 🎯 What is Hedgy?
 
 Hedgy enables users to:
