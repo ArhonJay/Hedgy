@@ -1,0 +1,49 @@
+# Render Configuration
+# This file tells Render how to build and deploy your services
+
+services:
+  # Frontend - Landing Page
+  - type: web
+    name: hedgy-frontend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd fe && npm install && npm run build
+    startCommand: cd fe && npm start
+    rootDir: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_TOKEN_ADDRESS
+        value: 0xaD1C4E8FeA4baf773507F3F2Ed4760B5CF600d12
+      - key: NEXT_PUBLIC_NETWORK
+        value: testnet
+
+  # Telegram Bot
+  - type: worker
+    name: hedgy-telegram-bot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd bot && npm install
+    startCommand: cd bot && npm start
+    rootDir: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # Add this manually in Render dashboard
+      - key: HEDERA_NETWORK
+        value: testnet
+      - key: HEDERA_CHAIN_ID
+        value: 296
+      - key: TOKEN_CONTRACT
+        value: 0xaD1C4E8FeA4baf773507F3F2Ed4760B5CF600d12
+      - key: FAUCET_CONTRACT
+        value: 0xc9a2e4b31312dA41A8E88A970f5C5425cBa5743d
+      - key: BUY_CONTRACT
+        value: 0x0C174a7595Ea88f45428F2cBC2FbCC34f5f682E6
+      - key: SELL_CONTRACT
+        value: 0x28b6fEB7E7115D8FaaB80d6Df6aF26c657B25a00
+      - key: HEDERA_RPC_URL
+        value: https://testnet.hashio.io/api

@@ -1,0 +1,27 @@
+{
+  "name": "hedgy-monorepo",
+  "version": "1.0.0",
+  "description": "Hedgy - Hedera Token Trading Bot Ecosystem",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd bot && npm install && cd ../fe && npm install && cd ../smc && npm install",
+    "dev:bot": "cd bot && npm run dev",
+    "dev:fe": "cd fe && npm run dev",
+    "start:bot": "cd bot && npm start",
+    "start:fe": "cd fe && npm start",
+    "build:fe": "cd fe && npm run build",
+    "deploy:smc": "cd smc && npm run deploy:testnet"
+  },
+  "keywords": [
+    "hedera",
+    "telegram-bot",
+    "defi",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

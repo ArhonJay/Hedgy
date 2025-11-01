@@ -20,17 +20,17 @@ async function main() {
   // const FAUCET_COOLDOWN_TIME = process.env.FAUCET_COOLDOWN_TIME || 86400; // 24 hours
 
   // Buy Configuration
-  // const BUY_TOKEN_PRICE = process.env.BUY_TOKEN_PRICE || hre.ethers.parseEther("0.001");
-  // const BUY_MIN_PURCHASE = process.env.BUY_MIN_PURCHASE || hre.ethers.parseEther("1");
-  // const BUY_MAX_PURCHASE = process.env.BUY_MAX_PURCHASE || hre.ethers.parseEther("10000");
+  const BUY_TOKEN_PRICE = process.env.BUY_TOKEN_PRICE || hre.ethers.parseEther("0.001");
+  const BUY_MIN_PURCHASE = process.env.BUY_MIN_PURCHASE || hre.ethers.parseEther("1");
+  const BUY_MAX_PURCHASE = process.env.BUY_MAX_PURCHASE || hre.ethers.parseEther("10000");
 
   // Use existing token address from previous deployment
   const tokenAddress = "0xaD1C4E8FeA4baf773507F3F2Ed4760B5CF600d12";
 
   // Sell Configuration
-  const SELL_TOKEN_PRICE = process.env.SELL_TOKEN_PRICE || hre.ethers.parseEther("0.0009");
-  const SELL_MIN_SELL = process.env.SELL_MIN_SELL || hre.ethers.parseEther("1");
-  const SELL_MAX_SELL = process.env.SELL_MAX_SELL || hre.ethers.parseEther("10000");
+  // const SELL_TOKEN_PRICE = process.env.SELL_TOKEN_PRICE || hre.ethers.parseEther("0.0009");
+  // const SELL_MIN_SELL = process.env.SELL_MIN_SELL || hre.ethers.parseEther("1");
+  // const SELL_MAX_SELL = process.env.SELL_MAX_SELL || hre.ethers.parseEther("10000");
 
   // // Deploy Token
   // console.log("📄 Deploying HedgyToken...");
@@ -52,31 +52,31 @@ async function main() {
   // const faucetAddress = await faucet.getAddress();
   // console.log("✅ TokenFaucet deployed to:", faucetAddress, "\n");
 
-  // // Deploy Buy Contract
-  // console.log("💵 Deploying TokenBuy...");
-  // const Buy = await hre.ethers.getContractFactory("TokenBuy");
-  // const buy = await Buy.deploy(
-  //   tokenAddress,
-  //   BUY_TOKEN_PRICE,
-  //   BUY_MIN_PURCHASE,
-  //   BUY_MAX_PURCHASE
-  // );
-  // await buy.waitForDeployment();
-  // const buyAddress = await buy.getAddress();
-  // console.log("✅ TokenBuy deployed to:", buyAddress, "\n");
+  // Deploy Buy Contract
+  console.log("💵 Deploying TokenBuy...");
+  const Buy = await hre.ethers.getContractFactory("TokenBuy");
+  const buy = await Buy.deploy(
+    tokenAddress,
+    BUY_TOKEN_PRICE,
+    BUY_MIN_PURCHASE,
+    BUY_MAX_PURCHASE
+  );
+  await buy.waitForDeployment();
+  const buyAddress = await buy.getAddress();
+  console.log("✅ TokenBuy deployed to:", buyAddress, "\n");
 
   // Deploy Sell Contract
-  console.log("💸 Deploying TokenSell...");
-  const Sell = await hre.ethers.getContractFactory("TokenSell");
-  const sell = await Sell.deploy(
-    tokenAddress,
-    SELL_TOKEN_PRICE,
-    SELL_MIN_SELL,
-    SELL_MAX_SELL
-  );
-  await sell.waitForDeployment();
-  const sellAddress = await sell.getAddress();
-  console.log("✅ TokenSell deployed to:", sellAddress, "\n");
+  // console.log("💸 Deploying TokenSell...");
+  // const Sell = await hre.ethers.getContractFactory("TokenSell");
+  // const sell = await Sell.deploy(
+  //   tokenAddress,
+  //   SELL_TOKEN_PRICE,
+  //   SELL_MIN_SELL,
+  //   SELL_MAX_SELL
+  // );
+  // await sell.waitForDeployment();
+  // const sellAddress = await sell.getAddress();
+  // console.log("✅ TokenSell deployed to:", sellAddress, "\n");
 
   // // Fund contracts with tokens
   // console.log("💰 Funding contracts with tokens...");
@@ -99,9 +99,9 @@ async function main() {
   console.log("=" .repeat(60));
   console.log("\n📋 Contract Addresses:");
   console.log("  • Token (HEDGY):", tokenAddress);
-  console.log("  • Sell Contract:", sellAddress);
+  console.log("  • Buy Contract:", buyAddress);
   console.log("\n🔗 View on HashScan:");
-  console.log(`  https://hashscan.io/testnet/contract/${sellAddress}`);
+  console.log(`  https://hashscan.io/testnet/contract/${buyAddress}`);
   console.log("\n💾 Save these addresses to .env or deployments.json");
   console.log("=" .repeat(60));
 
@@ -114,12 +114,12 @@ async function main() {
     timestamp: new Date().toISOString(),
     contracts: {
       token: tokenAddress,
-      sell: sellAddress,
+      buy: buyAddress,
     },
     config: {
-      sellTokenPrice: SELL_TOKEN_PRICE.toString(),
-      sellMinAmount: SELL_MIN_SELL.toString(),
-      sellMaxAmount: SELL_MAX_SELL.toString(),
+      buyTokenPrice: BUY_TOKEN_PRICE.toString(),
+      buyMinAmount: BUY_MIN_PURCHASE.toString(),
+      buyMaxAmount: BUY_MAX_PURCHASE.toString(),
     },
   };
 

@@ -53,7 +53,12 @@ contract TokenBuy is Ownable, ReentrancyGuard, Pausable {
     function buyTokens() external payable nonReentrant whenNotPaused {
         require(msg.value > 0, "Must send HBAR to buy tokens");
         
-        uint256 tokenAmount = calculateTokenAmount(msg.value);
+        // Convert msg.value from tinybar to wei for Hedera compatibility
+        // On Hedera: 1 HBAR = 100,000,000 tinybar = 10^18 wei
+        // Therefore: wei = tinybar * 10^10
+        uint256 hbarAmountWei = msg.value * 10**10;
+        
+        uint256 tokenAmount = calculateTokenAmount(hbarAmountWei);
         
         require(tokenAmount >= minPurchase, "Below minimum purchase amount");
         require(tokenAmount <= maxPurchase, "Exceeds maximum purchase amount");
@@ -70,14 +75,14 @@ contract TokenBuy is Ownable, ReentrancyGuard, Pausable {
     }
     
     /**
-     * @dev Calculate token amount for given HBAR amount
+     * @dev Calculate token amount for given HBAR amount (expects wei)
      */
     function calculateTokenAmount(uint256 hbarAmount) public view returns (uint256) {
         return (hbarAmount * 10**18) / tokenPrice;
     }
     
     /**
-     * @dev Calculate HBAR cost for given token amount
+     * @dev Calculate HBAR cost for given token amount (returns wei)
      */
     function calculateHBARCost(uint256 tokenAmount) public view returns (uint256) {
         return (tokenAmount * tokenPrice) / 10**18;
@@ -149,7 +154,7 @@ contract TokenBuy is Ownable, ReentrancyGuard, Pausable {
     }
     
     /**
-     * @dev Get contract HBAR balance
+     * @dev Get contract HBAR balance (returns tinybar on Hedera)
      */
     function getHBARBalance() external view returns (uint256) {
         return address(this).balance;
