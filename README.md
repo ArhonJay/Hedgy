@@ -18,6 +18,8 @@
 
 **Hedgy** is an innovative token trading platform built on the Hedera Network, combining smart contracts, a Telegram bot interface, and a modern web frontend to provide seamless token trading experiences. Built for the **Hedera Africa Hackathon**, Hedgy demonstrates the power and efficiency of Hedera's hashgraph consensus.
 
+[Pitch Deck](https://www.canva.com/design/DAG3X83lmdo/yD5f8PKphbNYfsP9FPfXEw/view?utm_content=DAG3X83lmdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f98ebe396)
+
 ### 🎯 What is Hedgy?
 
 Hedgy enables users to:
@@ -245,10 +247,8 @@ npm run coverage      # Generate coverage report
 
 ### 🎓 Hackathon Submission
 
-**Project Name:** Hedgy - Hedera Token Trading Bot  
-**Category:** DeFi / Trading Tools  
-**Team:** [Your Team Name]  
-**Submission Date:** [Date]
+**Project Name:** Hedgy  
+**Category:**  Onchain Finance & Real-World Assets (RWA); Subtrack: Financial Inclusion
 
 ### 🏆 What Makes Hedgy Special?
 
@@ -286,19 +286,11 @@ npm run coverage      # Generate coverage report
 
 **Certificate Details:**
 
-**Course:** [Course Name]  
-**Platform:** Hedera/HashGraph  
-**Completed By:** [Your Name]  
-**Completion Date:** [Date]  
-**Certificate ID:** [Certificate Number]
-
-**Certificate Image:**
-
-<!-- Add your certificate image here -->
-```
-[Certificate Image Placeholder]
-Replace this section with your actual Hashgraph course completion certificate
-```
+- **Course:** Hashgraph Developer Course
+- **Platform:** Hedera/HashGraph  
+- **Completed By:** Elfritz Angelo Peralta 
+- **Completion Date:** October 31, 2025
+- **Certificate ID:** [Certificate Number](https://certs.hashgraphdev.com/ff92286b-5e5e-4261-a188-68dc550c1482.pdf)
 
 **Skills Acquired:**
 - ✅ Hedera network architecture and consensus
@@ -323,8 +315,8 @@ Replace this section with your actual Hashgraph course completion certificate
 
 ### Access Points
 
-- 🌐 **Website:** [Your Deployed URL]
-- 🤖 **Telegram Bot:** [@YourBotUsername](https://t.me/YourBotUsername)
+- 🌐 **Website:** [Hedgy Bot](https://hedgyybot.vercel.app/)
+- 🤖 **Telegram Bot:** [@HedgyyBot](https://t.me/HedgyyBot)
 - 📖 **Documentation:** [Docs Link]
 
 ---
@@ -414,10 +406,6 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ---
 
 ## 👥 Team
-
-- **Developer:** [Your Name]
-- **Role:** Full Stack Blockchain Developer
-- **Contact:** [Your Email/Twitter/LinkedIn]
 
 ---
 
