@@ -19,8 +19,8 @@ services:
       - key: NEXT_PUBLIC_NETWORK
         value: testnet
 
-  # Telegram Bot
-  - type: worker
+  # Telegram Bot - Now as Web Service (Free Tier Compatible)
+  - type: web
     name: hedgy-telegram-bot
     env: node
     region: oregon
@@ -28,6 +28,7 @@ services:
     buildCommand: cd bot && npm install
     startCommand: cd bot && npm start
     rootDir: .
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production

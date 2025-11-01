@@ -132,23 +132,68 @@ bot.on('error', (error) => {
   console.error('❌ Bot error:', error.message);
 });
 
+// ============================================
+// HTTP SERVER FOR RENDER (Free Tier Support)
+// ============================================
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer((req, res) => {
+  if (req.url === '/health' || req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      status: 'ok',
+      bot: 'HedgyBot',
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+      message: 'Bot is running'
+    }));
+  } else if (req.url === '/stats') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      status: 'ok',
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      contracts: {
+        token: process.env.TOKEN_CONTRACT,
+        faucet: process.env.FAUCET_CONTRACT,
+        buy: process.env.BUY_CONTRACT,
+        sell: process.env.SELL_CONTRACT
+      }
+    }));
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
+  }
+});
+
+server.listen(PORT, () => {
+  console.log('✅ HedgyBot is running!');
+  console.log('📱 Ready to receive messages on Telegram\n');
+  console.log(`🌐 HTTP server running on port ${PORT}`);
+  console.log(`🔗 Health check: http://localhost:${PORT}/health`);
+  console.log('\nConfiguration:');
+  console.log('- Network:', process.env.HEDERA_NETWORK || 'testnet');
+  console.log('- Token Contract:', process.env.TOKEN_CONTRACT);
+  console.log('- Faucet Contract:', process.env.FAUCET_CONTRACT);
+  console.log('\n💡 Tip: Use /start in Telegram to begin!\n');
+});
+
 // Graceful shutdown
 process.on('SIGINT', () => {
   console.log('\n👋 Shutting down HedgyBot gracefully...');
   bot.stopPolling();
-  process.exit(0);
+  server.close(() => {
+    console.log('✅ Server closed');
+    process.exit(0);
+  });
 });
 
 process.on('SIGTERM', () => {
   console.log('\n👋 Shutting down HedgyBot gracefully...');
   bot.stopPolling();
-  process.exit(0);
+  server.close(() => {
+    console.log('✅ Server closed');
+    process.exit(0);
+  });
 });
-
-console.log('✅ HedgyBot is running!');
-console.log('📱 Ready to receive messages on Telegram\n');
-console.log('Configuration:');
-console.log('- Network:', process.env.HEDERA_NETWORK || 'testnet');
-console.log('- Token Contract:', process.env.TOKEN_CONTRACT);
-console.log('- Faucet Contract:', process.env.FAUCET_CONTRACT);
-console.log('\n💡 Tip: Use /start in Telegram to begin!\n');
